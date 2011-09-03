@@ -17,7 +17,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-use Knp\Bundle\MenuBundle\MenuItem;
+use Knp\Menu\MenuItem;
 
 use Application\Sonata\NewsBundle\Entity\Comment;
 
@@ -134,12 +134,12 @@ class PostAdmin extends Admin
 
         $menu->addChild(
             $this->trans('view_post'),
-            $admin->generateUrl('edit', array('id' => $id))
+            array( 'uri' => $admin->generateUrl('edit', array('id' => $id)) )
         );
 
         $menu->addChild(
             $this->trans('link_view_comment'),
-            $admin->generateUrl('sonata.news.admin.comment.list', array('id' => $id))
+            array( $admin->generateUrl('sonata.news.admin.comment.list', array('id' => $id)) )
         );
     }
 
