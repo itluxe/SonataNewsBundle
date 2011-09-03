@@ -134,7 +134,7 @@ class PostAdmin extends Admin
 
         $menu->addChild(
             $this->trans('view_post'),
-            array( 'uri' => $admin->generateUrl('edit', array('id' => $id)) )
+            array('uri' => $admin->generateUrl('edit', array('id' => $id)))
         );
 
         $menu->addChild(
